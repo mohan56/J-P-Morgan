@@ -1,0 +1,65 @@
+<template>
+    <lightning-card  title="Account Table Information">
+            Total Records = {countOfRecords};
+        <lightning-combobox
+        name="type"
+        label="Type"
+        value={type}
+        placeholder="Select Type"
+        options={optionsType}
+        onchange={typeHandler} ></lightning-combobox><br/>
+
+
+        <table aria-describedby="conatact-list" class="slds-table  slds-table_bordered ">
+
+            <!--Header of the table-->
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="Account Name">Account Name</div>
+                    </th>
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="Account Type">Type</div>
+                    </th>
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="SLA">SLA</div>
+                    </th>
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="Account CreatedDate">CreatedDate</div>
+                    </th>
+               </tr>
+            </thead>
+
+            <!--Body of the table-->
+            <tbody>
+               
+                   <template for:each={accList} for:item="objAcc">
+                        <tr key={objAcc.id}>
+                              <td>
+                                    {objAcc.Name}
+                              </td>  
+
+                              <td>
+                                {objAcc.Type}
+                            </td>  
+
+                            <td>
+                               {objAcc.SLA__c}
+                            </td> 
+
+                            <td>
+                                {objAcc.CreatedDate}
+                            </td> 
+                        </tr>
+
+                   </template>
+                    
+                
+            </tbody>
+        </table>
+
+
+
+    </lightning-card>
+
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card  title="Applicant Search">
+        <lightning-input  data-formfield="applicantId"  type="text" label="Enter Applicant Id" placeholder="for ex APID-00000"> </lightning-input> <br />
+        <lightning-button variant="brand" label="Search" title="Search" onclick={searchApplicantHandler}></lightning-button><br/>
+        <template if:true={showInfoFlag}>
+            First Name={objApp.First_Name__c}<br/>
+            Last Name={objApp.Last_Name__c}<br/>
+            Gender ={objApp.Gender_del__c}<br/>
+                  
+       </template>
+        
+       <template if:true={showSpinnerFlag}>
+                    <div class="exampleHolder">
+                        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                    </div>
+       </template>
+       
+        
+        
+       
+     	 
+    </lightning-card>
+
+</template>

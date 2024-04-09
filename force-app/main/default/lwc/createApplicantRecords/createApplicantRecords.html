@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Applicant Registration Form">
+
+        <lightning-input  data-formfield="applicantFirstName"  type="text" label=" First Name"> </lightning-input> <br />
+        <lightning-input  data-formfield="applicantLastName"  type="text" label="Last Name"> </lightning-input> <br />
+        <lightning-input  data-formfield="dob"  type="date" label="DOB"> </lightning-input> <br />
+     
+       
+        <lightning-button variant="brand" icon-name="utility:save" label="Save" onclick={insertApplicantRecord}></lightning-button>
+   
+       </lightning-card>
+   
+</template>

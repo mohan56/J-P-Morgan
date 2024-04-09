@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Show Top 10 Lead Records">
+        
+        <lightning-datatable
+                key-field="Id"
+                data={leadData}
+                columns={columns}    
+                draft-values={draftValues} 
+                hide-checkbox-column="true"
+                   > 
+        </lightning-datatable>
+
+        <template if:true={showPopupFlag}>
+       
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Log a Call</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <p class="slds-m-around_medium"> 
+
+                    <!--<lightning-input label="Id" disabled value={accountId}></lightning-input>
+
+                        <lightning-input label="Name" type="text" value={recordId} disabled={recordId} class="slds-m-bottom_x-small"></lightning-input>
+                        <lightning-input label="Subject" type="text" value={leadObject.Subject} class="slds-m-bottom_x-small"></lightning-input>
+                       <lightning-input label="Priority" type="text" value={leadObject.Priority} class="slds-m-bottom_x-small"></lightning-input>
+                        <lightning-input label="Status" type="text" value={leadObject.Status} class="slds-m-bottom_x-small"></lightning-input>
+                        <lightning-button label="Create Task" variant="brand" onclick={createTask}></lightning-button>-->
+                    
+            </p>
+                </div>
+                <div class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={closeButtonHandler}>Close</button>
+            
+                </div>
+                </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+            </template>
+
+
+    </lightning-card>
+</template>

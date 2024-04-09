@@ -1,0 +1,66 @@
+<template>
+    <lightning-card  title="Applicant Record For DateRange">
+        <lightning-input  data-formfield="FromDate"  type="date" label="From Date" > </lightning-input> <br />
+        <lightning-input  data-formfield="ToDate"  type="date" label="To Date"> </lightning-input> <br />
+     	  
+        <lightning-button variant="brand" label="Search" title="Search" onclick={searchHandler}></lightning-button><br/>
+      <template if:true={showTableInfo}>
+        Total Records Found ={countOfRecords};
+
+        <table aria-describedby="conatact-list" class="slds-table  slds-table_bordered ">
+
+            <!--Header of the table-->
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="Applicant Id">Applicant Id</div>
+                    </th>
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="First Name">First Name</div>
+                    </th>
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="Gender">Gender</div>
+                    </th>
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="CreatedDate">CreatedDate</div>
+                    </th>
+               </tr>
+            </thead>
+
+            <!--Body of the table-->
+            <tbody>
+               
+                   <template for:each={applist} for:item="objApp">
+                        <tr key={objApp.Id}>
+                              <td>
+                                    {objApp.First_Name__c}
+                              </td>  
+
+                              <td>
+                                {objApp.Gender_del__c}
+                            </td> 
+
+                            <td>
+                               {objApp.CreatedDate}
+                            </td>  
+
+                        </tr>
+
+                   </template>
+                    
+                
+            </tbody>
+        </table>
+    </template>
+
+    <template if if:false={showTableInfo}>
+
+          No Record Found..!!
+
+    </template>
+
+
+  
+    </lightning-card>
+
+</template>

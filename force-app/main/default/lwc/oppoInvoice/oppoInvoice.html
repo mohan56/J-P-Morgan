@@ -1,0 +1,62 @@
+<template>
+    <lightning-card>
+       
+        <br/><br/>
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Save" variant="brand" onclick={saveHandler}></lightning-button>&nbsp;&nbsp;
+            <lightning-button label="Quick Save" variant="brand" onclick={quickSaveHandler}></lightning-button>&nbsp;&nbsp;
+            <lightning-button label="Cancel" variant="brand" onclick={saveHandler}></lightning-button>
+        </div>
+
+        <br/><br/>
+
+        <div class="Invoice Section" style="background-color:#f3f3f3; padding: 10px; margin-top:-10px;margin-bottom:-10px;">
+            <span class="label" style="font-weight:bold; font-size:14px; margin-left:10px;">
+                Create Invoice
+            </span> 
+        </div>
+        <br/><br/>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="4">
+                    <lightning-input label="Invoice Number"></lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+                        <lightning-combobox name="Status"
+                            label="Invoice Status"
+                            value={value}
+                            placeholder="Select Status"
+                            options={options}
+                            onchange={handleStatusChange}>
+                        </lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+                <lightning-input label="Opportunity Name" value={opportunityName}></lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+                <lightning-input label="Account Name" value={OpportunityAccountName}></lightning-input>              
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+                <lightning-input label ="Opportunity Stage" value={opportunityStage}></lightning-input>
+            </lightning-layout-item>
+
+        </lightning-layout>
+
+        <br/><br/>
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Save" variant="brand" onclick={saveHandler}></lightning-button>&nbsp;&nbsp;
+            <lightning-button label="Quick Save" variant="brand" onclick={quickSaveHandler}></lightning-button>&nbsp;&nbsp;
+            <lightning-button label="Cancel" variant="brand" onclick={saveHandler}></lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

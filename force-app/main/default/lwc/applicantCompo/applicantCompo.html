@@ -1,0 +1,11 @@
+<template>
+    <lightning-card  title="Applicant Component">
+        <lightning-input  data-formfield="applicantId"  type="text" label="Enter Applicant Id" name="appId" onblur={searchAddressHandler}> </lightning-input> <br />
+     	 
+
+
+     <!--CALLING Address Component-->  
+     
+     <c-address-compo recieved-address-list={appList}></c-address-compo>
+    </lightning-card>
+</template>

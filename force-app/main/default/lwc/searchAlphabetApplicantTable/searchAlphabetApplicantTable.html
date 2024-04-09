@@ -1,0 +1,40 @@
+<template>
+
+    <lightning-card  title="Applicant Alphabet Table">
+        <lightning-input  data-formfield="applicantFirstName"  type="text" label="Enter Applicant Name" name="appName" onkeyup={applicantAlphabetLike}> </lightning-input> <br />
+
+        <table aria-describedby="conatact-list" class="slds-table  slds-table_bordered ">
+
+            <!--Header of the table-->
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-size_1-of-6 " scope="col">
+                        <div class="slds-truncate " title="Applicant First Name">First Name</div>
+                    </th>
+                   
+               </tr>
+            </thead>
+
+            <!--Body of the table-->
+            <tbody>
+               
+                   <template for:each={appList} for:item="objApp">
+                        <tr key={objApp.id}>
+                              <td>
+                                    {objApp.First_Name__c}
+                              </td>  
+  
+                        </tr>
+
+                   </template>
+                    
+                
+            </tbody>
+        </table>
+
+
+
+     	    
+    </lightning-card>
+    
+</template>

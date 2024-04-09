@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Picklist Record Type">
+         <lightning-input label="Name" data-formfield="accName"></lightning-input><br/>
+        <lightning-input label="Channel Program Name" type="text" data-formfield="channelName" ></lightning-input><br/>
+        <lightning-input label="Channel Program level Name" type="text" data-formfield="channelLevelName"></lightning-input><br/>
+
+        <lightning-combobox
+            name="rating"
+            label="Rating"
+            value={selectedRating}
+            options={ratingOptions}
+            onchange={handleRatingChange}>
+        </lightning-combobox>
+      <br/>
+
+        <lightning-combobox
+            name="Industry"
+            label="Industry"
+            value={selectedIndustry}
+            options={industryOptions}
+            onchange={handleIndustryChange}>
+        </lightning-combobox>
+ 
+    <lightning-button label="Save" variant="Brand" onclick={saveHandler}></lightning-button>
+    </lightning-card>
+   
+</template>

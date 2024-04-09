@@ -1,0 +1,13 @@
+<template>
+    <lightning-card  title="Applicant Search">
+        <lightning-input  data-formfield="applicantId"  type="text" label="Enter Applicant Id" name="appId"> </lightning-input> <br />
+        <lightning-button variant="brand" label="Search" icon-name="utility:search" onclick={searchAddressHandler}></lightning-button><br/>
+              
+           <!--Calling Address Popup-->
+
+           <template if:true={showPopupModalFlag}>
+           <c-address-popup onclosemodal={closeAddressPopupHandler}></c-address-popup>
+        </template>
+
+    </lightning-card>
+</template>

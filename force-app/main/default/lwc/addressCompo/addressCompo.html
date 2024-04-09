@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  title="Address Table">
+
+        Total Record Selected={selectedRecordsCount}<br/>
+        <lightning-datatable
+            key-field="Id"
+            data={recievedAddressList}
+            columns={columns}    
+            draft-values={draftValues} 
+            onrowselection={selectedRecordsHandler}                     
+            onsave={saveHandler}   > 
+</lightning-datatable>
+
+<lightning-button variant="destructive" label="Delete Selected Records"  onclick={deletedAddressRecord}></lightning-button>
+  
+
+
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  title="Applicant Address Search">
+        <lightning-input  data-formfield="applicantId"  type="text" label="Enter Applicant Id" name="appId"> </lightning-input> <br />
+        <lightning-button variant="brand" label="Search" icon-name="utility:search" onclick={searchApplicantAddress}></lightning-button><br/>
+      
+        <lightning-button variant="Destructive" label="Deleted Selected Records" icon-name="utility:delete" onclick={deletedAddressRecords}></lightning-button>
+  
+            <lightning-datatable
+                    key-field="Id"
+                    data={addressList}
+                    columns={columns}    
+                    draft-values={draftValues} 
+                    onrowselection={selectedRecordsHandler}                     
+                    onsave={saveHandler}   > 
+            </lightning-datatable>
+
+
+    </lightning-card>
+
+</template>

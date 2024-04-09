@@ -1,0 +1,50 @@
+<template>
+    <lightning-card>
+        <div class="slds-box slds-theme–default">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Applicant Type</th>
+                        <th scope="col">Aadhar Card</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={recordsToDisplay} for:item="app" >
+                        <tr key={app.Id}>
+                            <td data-label="First Name">{app.firstName}</td>
+                            <td data-label="Last Name">{app.lastName}</td>
+                            <td data-label="Gender">{app.Gender}</td>
+                            <td data-label="Applicant Type">{app.applicantType}</td>
+                            <td data-label="Aadhar Card">{app.aadharCard}</td>
+                            <td><lightning-button label="Edit" onclick={editHandler}></lightning-button></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <div class="slds-p-top_x-small">Note: All files are scheduled for SFTP upload</div>
+
+                <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-spread" style="padding-top: 0.5em;">
+                    <!--PAGE NAVIGATION-->
+                    <div class="slds-align_absolute-center" style="height:5rem">
+                        <lightning-button disabled={bDisableFirst} icon-name="utility:jump_to_left" label="First" class="slds-p-horizontal_x-small" alternative-text="first page" onclick={firstPage}></lightning-button>
+                        <lightning-button disabled={bDisableFirst} icon-name="utility:chevronleft" label="Previous" alternative-text="Previous" onclick={previousPage}></lightning-button>
+                        &nbsp;
+                        <span class="slds-badge">Showing {pageNumber} &nbsp;of&nbsp; {totalPages} &nbsp;&nbsp;Page(s)</span>
+                        &nbsp;
+                        <lightning-button disabled={bDisableLast} icon-name="utility:chevronright" label="Next" alternative-text="Next" onclick={nextPage} class="slds-p-horizontal_x-small" icon-position="right"></lightning-button>
+                        <lightning-button disabled={bDisableLast} icon-name="utility:jump_to_right" label="Last" alternative-text="last page" onclick={lastPage} icon-position="right"></lightning-button>
+                    </div>
+            <!--TOTAL RECORDS-->
+                    <div class="slds-clearfix">
+                        <div class="slds-float_right">
+                            <span class="slds-badge"> Total Records: {totalRecords}</span>
+                        </div>
+                    </div>
+                </div>
+           
+       </div>
+    </lightning-card>
+</template>

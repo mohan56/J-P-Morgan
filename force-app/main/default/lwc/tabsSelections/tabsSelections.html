@@ -1,0 +1,25 @@
+<template>
+    <lightning-card label="Merge Fields">
+        <lightning-tabset>
+            <lightning-tab label="Objects" onclick={handleObjectTab}></lightning-tab>
+        </lightning-tabset>
+        <div class="slds-scrollable" style="height:5rem;width:24rem" tabindex="0">
+            <div class="slds-text-longform" style="width:150%">
+                <span class="expandable expandableselected" >Contact ></span><br/>
+                <span class="expandable expandableselected" >Account ></span><br/>
+                <span class="expandable expandableselected" >Applicant ></span><br/>
+                <span class="expandable expandableselected" >Opportunity ></span><br/>
+                        
+            </div>
+        </div>
+        
+            <!-- <div class="slds-scrollable_y" style="height:5rem;width:24rem" tabindex="0">
+              
+                    <span class="expandable expandableselected" fieldname="ContactId" objectname="Contact">Contact ></span><br/>
+                    <span class="expandable expandableselected" fieldname="AccountId" objectname="Account">Account ></span><br/>
+                    <span class="expandable expandableselected" >Applicant ></span><br/>
+                    <span class="expandable expandableselected" >Opportunity ></span><br/>
+                                 
+            </div>     -->
+    </lightning-card>
+</template>

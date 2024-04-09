@@ -1,0 +1,10 @@
+<template>
+    <lightning-card  title="Father Popup Model">
+        <lightning-button variant="brand" label="Show Child Popup Modal" onclick={showPopupHandler} icon-name="utility:send"></lightning-button>
+  
+         <!--Calling Child Component-->
+         <template if:true={closePopupFlag}>
+         <c-child-popup-modal onclosemodal={closePopupModalHandler}></c-child-popup-modal>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card  title="Show Popup Modal">
+        <lightning-button variant="brand" label="Show Popup Model" icon-name="utility:send" onclick={showPopupHandler}></lightning-button>
+  
+
+        <!--Calling PopUp Message-->
+        <template if:true={showPopUpFlag}>
+               <c-pop-up-message onclosemodel={recievedCloseModalHandler}></c-pop-up-message>
+        </template>
+    </lightning-card>
+</template>

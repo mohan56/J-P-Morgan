@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Navigation service in Lighntning Web Component">
+      <lightning-card title="Navigate to Record Page">
+        <lightning-button-group>
+
+            <lightning-button label="New Record Page" onclick={navigateToNewRecordPage}></lightning-button>
+            <lightning-button label="Edit Record Page" onclick={navigateToEditRecordPage}></lightning-button>
+            <lightning-button label="View Record Page" onclick={navigateToViewRecordPage}></lightning-button><br/>
+
+        </lightning-button-group>
+      </lightning-card>
+      <lightning-card label="Navigate to List View">
+        <lightning-button-group>
+            <lightning-button label="Account Recent view" onclick={navigatetoRecentView}></lightning-button>
+            <lightning-button label="Related List view" onclick={navigatetoRelatedList}></lightning-button>
+        </lightning-button-group>
+      </lightning-card>
+    </lightning-card>
+</template>

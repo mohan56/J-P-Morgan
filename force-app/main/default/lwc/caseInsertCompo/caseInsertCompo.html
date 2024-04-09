@@ -1,0 +1,36 @@
+<template>
+    <lightning-card  title="Case Information">
+        <lightning-input  data-formfield="caseNumber"  type="text" label="Case Number" > </lightning-input> <br />
+        <lightning-combobox
+        name="status"
+        label="Status"
+        value={status}
+        placeholder="Select status"
+        options={optionsStatus}
+        onchange={statusHandler} ></lightning-combobox><br/>
+
+        <lightning-combobox
+        name="origin"
+        label="Origin"
+        value={origin}
+        placeholder="Select origin"
+        options={optionsOrigin}
+        onchange={originHandler} ></lightning-combobox><br/>
+
+        <lightning-combobox
+        name="type"
+        label="Type"
+        value={type}
+        placeholder="Select type"
+        options={optionsType}
+        onchange={typeHandler} ></lightning-combobox><br/>
+
+
+        <lightning-input  data-formfield="description"  type="text" label="Description" > </lightning-input> <br />
+
+        <lightning-button variant="brand" label="Save" icon-name="utility:save" onclick={caseHandler}></lightning-button>
+  
+       
+            
+    </lightning-card>
+</template>

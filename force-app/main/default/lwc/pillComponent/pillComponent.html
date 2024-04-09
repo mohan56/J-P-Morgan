@@ -1,0 +1,14 @@
+<!-- pillComponent.html -->
+<template>
+    <span class="slds-pill slds-pill_link">
+        <a href="#" class="slds-pill__action" title={label}>
+            <span class="slds-pill__label">{label}</span>
+        </a>
+        <button class="slds-button slds-button_icon slds-button_icon slds-pill__remove" title="Remove" onclick={removePill}>
+            <svg class="slds-button__icon" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+            </svg>
+            <span class="slds-assistive-text">Remove</span>
+        </button>
+    </span>
+</template>

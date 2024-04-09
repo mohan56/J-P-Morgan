@@ -1,0 +1,29 @@
+<template>
+    <lightning-card  title="CRUD OPERATION">
+        <lightning-button variant="brand" label="Create" icon-name="utility:record_create"    onclick={createHandler}></lightning-button>&nbsp;
+        <lightning-button variant="brand" label="Search" icon-name="utility:search" onclick={searchHandler}></lightning-button>&nbsp;
+        <lightning-button variant="success" label="Update" icon-name="utility:record_update" onclick={updateHandler}></lightning-button>&nbsp;
+        <lightning-button variant="destructive" label="Delete" icon-name="utility:delete" onclick={deleteHandler}></lightning-button>&nbsp;
+        <lightning-button variant="brand" label="Undelete" icon-name="utility:undelete" onclick={undeleteHandler}></lightning-button>&nbsp;
+            
+        <lightning-input  data-formfield="accountName"  type="text" label="Enter Account Name" name="accName"> </lightning-input> <br />
+
+        <template if:true={showInfoFlag}>
+        <lightning-input  data-formfield="accountType"  type="text" label="Type" name="accType"> </lightning-input> <br />
+        <lightning-input  data-formfield="accountSLA"  type="text" label="SLA" name="accSLA"> </lightning-input> <br />
+   
+        <lightning-button variant="brand" label="Save" icon-name="utility:save" onclick={saveHandler}></lightning-button><br/>
+
+        <template if:true={showSearchFeild}>
+        <lightning-input  data-formfield="accountType"  type="text" label="Type" name="accType" value={objectAcc.Type} disabled={disableSearchFlag}> </lightning-input> <br />
+        <lightning-input  data-formfield="accountSLA"  type="text" label="SLA" name="accSLA" value={objectAcc.SLA__c} disabled={disableSearchFlag}> </lightning-input> <br />
+    </template>
+    </template>
+       <template if:false={showInfoFlag}>
+      
+    <lightning-button variant="brand" label="Find" icon-name="utility:search" onclick={findRecordHandler}></lightning-button><br/>
+         
+      
+       </template>
+    </lightning-card>
+</template>

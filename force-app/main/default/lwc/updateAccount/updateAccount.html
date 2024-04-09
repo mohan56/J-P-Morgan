@@ -1,0 +1,29 @@
+<template>
+    <lightning-card  title="Account Update">
+        <lightning-input  data-formfield="accountId"  type="text" label="Enter Account Id" name="accId"> </lightning-input> <br />
+         
+        <lightning-combobox
+        name="Type"
+        label="Type"
+        value={type}
+        placeholder="Select Type"
+        options={optionsType}
+        onchange={typeHandler} ></lightning-combobox><br/>
+
+
+        <lightning-combobox
+        name="SLA"
+        label="SLA"
+        value={sla}
+        placeholder="Select SLA"
+        options={optionsSLA}
+        onchange={slaHandler} ></lightning-combobox><br/>
+
+        <lightning-button variant="brand" label="Save" icon-name="utility:save" onclick={saveHandler}></lightning-button><br/>
+
+        <lightning-button variant="destructive" label="Delete" icon-name="utility:delete" onclick={deleteHandler}></lightning-button>
+  
+  
+    </lightning-card>
+
+</template>

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card  title="Parent Component">
+        Parent Salary ={parentSalary}<br/>
+        <lightning-button variant="brand" label="Send to Child" icon-name="utility:send" onclick={sendToChildHandler}></lightning-button><br/>
+  
+
+        <!--Calling Child Component-->
+         
+         <c-child-compoent  received-data-from-parent ={parentSalary}  received-data-from-parent-on-button-click ={sendData} ></c-child-compoent>
+    </lightning-card>
+</template>

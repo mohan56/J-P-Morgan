@@ -1,0 +1,129 @@
+<template>
+    
+    <lightning-card title={title}>
+        <div class="slds-p-around_medium">
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Save" onclick={saveSalesQuoteStandard}
+                    class="slds-m-left_x-small"></lightning-button>
+                
+                <lightning-button variant="brand-outline" label="Quick Save" onclick={quickSaveSalesQuoteStandard}
+                    class="slds-m-left_x-small"></lightning-button>
+
+                <lightning-button variant="brand-outline" label="Cancel" onclick={handleCancel}
+                    class="slds-m-left_x-small"></lightning-button>
+            </div>  
+            <br /> 
+            <br />
+            
+            <!-- Adding Opportunity section -->
+            <div class="Allsection">
+                <div class="Opportunity Section">
+                    <div class="section" style="background-color:#f3f3f3; padding: 10px; margin-top:-10px;margin-bottom:-10px;">
+                        <span class="label" style="font-weight:bold; font-size:14px; margin-left:10px;">
+                            Opportunity
+                        </span>
+                    </div> 
+                    <br/>
+                    <br/>
+
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5">
+                            <lightning-input onchange={handleOppName} variant="label-inline" type="text" label="Opportunity Name"></lightning-input>
+ 
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5">
+                            <lightning-combobox name="Account" 
+                                            label="Account Rating"
+                                            options={ratingOptions} 
+                                            onchange={handleAccountRating} variant="label-inline"></lightning-combobox>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5"> 
+                            <lightning-combobox name="Opportunity StageName" 
+                                label="Opportunity StageName"
+                                options={stageOptions} 
+                                onchange={handleStageChange} variant="label-inline"></lightning-combobox>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5">
+                            <lightning-combobox name="Type" 
+                                            label="Type"
+                                            options={typeOptions}  
+                                            onchange={handleType} variant="label-inline"></lightning-combobox>
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5"> 
+                            <!-- Leave this layout item empty if you don't have anything to put here -->
+                                                     
+                            <span class="slds-pill slds-pill_link">
+                                <span class="slds-pill__icon_container">
+                                  <span class="slds-icon_container slds-icon-standard-account" title="Account">
+                                    <svg class="slds-icon" aria-hidden="true">
+                                    </svg>
+                                  </span>
+                                </span>
+                                
+                                <lightning-record-picker
+                                  object-api-name="Account"
+                                  label="Assigned Dealer"
+                                  onvaluechange={handleDealerValueChange}
+                                >
+                                </lightning-record-picker> <!-- Replace with lightning-record-picker -->
+                                <button class="slds-button slds-button_icon slds-button_icon slds-pill__remove" title="Remove">
+                                  <svg class="slds-button__icon" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                  </svg>
+                                  <span class="slds-assistive-text">Remove</span>
+                                </button>
+                              </span>                              
+                           
+                        </lightning-layout-item>
+
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5">
+                            <!-- Leave this layout item empty if you don't have anything to put here -->
+
+                            <lightning-record-picker
+                                object-api-name="Contact"
+                                label="Assigned Salesperson"
+                                onvaluechange={handleSalesDealerChange} ></lightning-record-picker>                                                     
+                        </lightning-layout-item>
+
+                        
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5"></lightning-layout-item>
+
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="5"></lightning-layout-item>
+
+                        <br/><br/>
+                        
+                            <lightning-layout-item size="1"></lightning-layout-item>
+                            <lightning-layout-item size="5">
+                                <lightning-button variant="brand" label="Create Opportunity" onclick={createOpportunityHandler}
+                                class="slds-m-left_x-small"></lightning-button>
+                            </lightning-layout-item>
+                       
+                    </lightning-layout>
+                </div>
+            </div>
+
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Save" onclick={saveSalesQuoteStandard}
+                    class="slds-m-left_x-small"></lightning-button>
+
+                <lightning-button variant="brand-outline" label="Quick Save" onclick={quickSaveSalesQuoteStandard}
+                    class="slds-m-left_x-small"></lightning-button>
+
+                <lightning-button variant="brand-outline" label="Cancel" onclick={handleCancel}
+                    class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
