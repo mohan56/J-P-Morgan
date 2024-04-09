@@ -1,0 +1,35 @@
+<template>
+    <div title="Casio Calculator" style="width:100%;">
+        <div style="width:44%">
+            <lightning-input label="Calculator" name="calculator" value={calculation}></lightning-input><br/>    
+        </div>
+
+        <div class="slds-grid slds-wrap">              
+            <div class="slds-col slds-size_1-of-3">
+
+                <span><lightning-button label="1" onclick={handleNumberClick} value="1"></lightning-button></span>
+                <span><lightning-button label="2" onclick={handleNumberClick} value="2"></lightning-button></span>
+                <span><lightning-button label="3" onclick={handleNumberClick} value="3"></lightning-button></span>
+                <br/>
+                <span><lightning-button label="4" onclick={handleNumberClick} value="4"></lightning-button></span>
+                <span><lightning-button label="5" onclick={handleNumberClick} value="5"></lightning-button></span>
+                <span><lightning-button label="6" onclick={handleNumberClick} value="6"></lightning-button></span>
+                <br/>
+                <span><lightning-button label="7" onclick={handleNumberClick} value="7"></lightning-button></span>
+                <span><lightning-button label="8" onclick={handleNumberClick} value="8"></lightning-button></span>
+                <span><lightning-button label="9" onclick={handleNumberClick} value="9"></lightning-button></span>
+                <br/>
+                <span><lightning-button label="0" onclick={handleNumberClick} value="0"></lightning-button></span>
+                <span><lightning-button label="+" onclick={handleOperatorClick} value="+"></lightning-button></span>
+                <span><lightning-button label="/" onclick={handleOperatorClick} value="/"></lightning-button></span>
+            </div> <br/> 
+            <div class="slds-col slds-size_1-of-3">
+               <lightning-button-icon icon-name="utility:back"  class="slds-m-left_xx-small" onclick={clearInput}></lightning-button-icon><br/>
+               <lightning-button-icon  icon-name="utility:close" class="slds-m-left_xx-small" label="*" onclick={handleOperatorClick} value="*"></lightning-button-icon> <br/> 
+               <lightning-button-icon   icon-name="utility:minimize_window" class="slds-m-left_xx-small" label="-" onclick={handleOperatorClick} value="/"></lightning-button-icon> <br/>
+               <lightning-button  class="slds-m-left_xx-small" label="=" onclick={evaluateExpression}></lightning-button><br/>
+           </div>
+        </div>
+      
+    </div>
+</template>
